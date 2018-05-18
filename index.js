@@ -1,4 +1,12 @@
-import { AppRegistry } from 'react-native';
-import App from './src/components/App';
+import { Navigation } from 'react-native-navigation';
+import { registerScreens } from './src/screens';
 
-AppRegistry.registerComponent('EventFinder', () => App);
+registerScreens();
+
+Navigation.events().registerAppLaunchedListener(() => {
+  Navigation.setRoot({
+    component: {
+      name: 'eventfinder.WelcomeScreen',
+    },
+  });
+});
