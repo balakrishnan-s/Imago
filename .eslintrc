@@ -9,7 +9,13 @@
           "jsx": true, 
           "modules": true 
       } 
-    }, 
+    },
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "fetch": true
+    },
     "extends" : [ 
       "eslint:recommended", 
       "plugin:react/recommended", 
