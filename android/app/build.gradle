@@ -101,6 +101,7 @@ android {
         applicationId "com.eventfinder"
         minSdkVersion 19
         targetSdkVersion 25
+        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative55"
         versionCode 1
         versionName "1.0"
         ndk {
@@ -136,6 +137,15 @@ android {
                 output.versionCodeOverride =
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
             }
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support' && requested.name != 'multidex') {
+            details.useVersion "25.4.0" // <- Change this to whatever version you're using
         }
     }
 }
