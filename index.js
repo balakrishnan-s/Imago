@@ -5,8 +5,10 @@ registerScreens();
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
-    component: {
-      name: 'eventfinder.WelcomeScreen',
+    root: {
+      component: {
+        name: 'eventfinder.WelcomeScreen',
+      },
     },
   });
 });
