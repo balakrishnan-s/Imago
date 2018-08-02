@@ -566,38 +566,6 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@types/jest@22.x.x":
-  version "22.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
-
-"@types/lodash@4.x.x":
-  version "4.14.115"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.115.tgz#54d171b2ce12c058742443b5f6754760f701b8f9"
-
-"@types/prop-types@15.x.x":
-  version "15.5.4"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.4.tgz#9e6199bad131786e24c2baa2a82705a02139fbf8"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-native@0.51.x":
-  version "0.51.10"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.51.10.tgz#ab060c0b87110a32a2e797ebaef5b485a7856217"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-test-renderer@16.x.x":
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.0.1.tgz#36ee8c4fe33c61d460ad0e7bc42a2d0ddcc775a1"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react@*", "@types/react@16.x.x":
-  version "16.4.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.7.tgz#f33f6d759a7e1833befa15224d68942d178a5a3f"
-  dependencies:
-    csstype "^2.2.0"
-
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1834,10 +1802,6 @@ cssstyle@^1.0.0:
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-1.0.0.tgz#79b16d51ec5591faec60e688891f15d2a5705129"
   dependencies:
     cssom "0.3.x"
-
-csstype@^2.2.0:
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
 
 damerau-levenshtein@^1.0.4:
   version "1.0.4"
@@ -4631,16 +4595,10 @@ react-native-dotenv@^0.2.0:
   dependencies:
     babel-plugin-dotenv "0.1.1"
 
-react-native-navigation@^2.0.2442:
-  version "2.0.2442"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2442.tgz#0578e637776747168803b166824ddd65b2b441e4"
+react-native-navigation@^2.0.2452:
+  version "2.0.2452"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2452.tgz#67a4b97c9a5b038f926411b95e8224afe57f6d2f"
   dependencies:
-    "@types/jest" "22.x.x"
-    "@types/lodash" "4.x.x"
-    "@types/prop-types" "15.x.x"
-    "@types/react" "16.x.x"
-    "@types/react-native" "0.51.x"
-    "@types/react-test-renderer" "16.x.x"
     hoist-non-react-statics "2.x.x"
     lodash "4.x.x"
     prop-types "15.x.x"
