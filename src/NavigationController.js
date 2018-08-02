@@ -4,7 +4,7 @@ export const setInitialLayout = () => { //eslint-disable-line
   Navigation.setRoot({
     root: {
       component: {
-        name: 'eventfinder.WelcomeScreen',
+        name: 'eventfinder.LandingPage',
       },
     },
   });

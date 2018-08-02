@@ -1,15 +1,19 @@
-const initialState = [];
+import { RECEIVE_EVENTS } from '../actions/actions';
+
+const initialState = {
+  events: [],
+  lastFetch: new Date(),
+};
 
 const events = (state = initialState, action) => {
   switch (action.type) {
 
-    case 'ADD_EVENT':
-      return [
+    case RECEIVE_EVENTS:
+      return {
         ...state,
-        {
-          id: action.id,
-        },
-      ];
+        events: action.payload.events,
+        lastFetch: action.payload.receivedAt,
+      };
 
     default:
       return state;

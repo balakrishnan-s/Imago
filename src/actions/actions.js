@@ -4,21 +4,25 @@ export const REQUEST_EVENTS = 'REQUEST_EVENTS';
 function requestEvents(location) {
   return {
     type: REQUEST_EVENTS,
-    location,
+    payload: {
+      location,
+    },
   };
 }
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
-function receiveEvents(location, json) {
+function receiveEvents(location, response) {
   return {
     type: RECEIVE_EVENTS,
-    location,
-    events: json.data.children.map(child => child.data),
-    receivedAt: Date.now(),
+    payload: {
+      location,
+      events: response.events.event,
+      receivedAt: Date.now(),
+    },
   };
 }
 
-function fetchEvents(location) {
+export function fetchEvents(location) {
   return (dispatch) => {
     dispatch(requestEvents(location));
     return fetch(`http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${location}`)
