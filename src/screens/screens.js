@@ -1,9 +1,8 @@
 import { Navigation } from 'react-native-navigation';
-import store from '../store/store';
-import reduxWrapper from '../components/hoc/reduxWrapper';
+import { Provider } from 'react-redux';
 import LandingPage from './LandingPage';
 
 /* eslint-disable import/prefer-default-export */
-export function registerScreens() {
-  Navigation.registerComponent('eventfinder.LandingPage', () => reduxWrapper(LandingPage, store));
+export function registerScreens(store) {
+  Navigation.registerComponentWithRedux('eventfinder.LandingPage', () => LandingPage, Provider, store);
 }

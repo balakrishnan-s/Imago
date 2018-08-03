@@ -1,4 +1,5 @@
 import { Navigation } from 'react-native-navigation';
+import store from './src/store/store';
 import { registerScreens } from './src/screens/screens';
 import { setInitialLayout } from './src/NavigationController';
 
@@ -14,7 +15,7 @@ const registerNavigationListener = () => new Promise((resolve) => {
 
 
 async function bootstrap() {
-  registerScreens();
+  registerScreens(store);
 
   // TODO: wait for Redux-Persist + Vector Icons
   await Promise.all([registerNavigationListener()]);
