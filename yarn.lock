@@ -4595,9 +4595,9 @@ react-native-dotenv@^0.2.0:
   dependencies:
     babel-plugin-dotenv "0.1.1"
 
-react-native-navigation@^2.0.2452:
-  version "2.0.2452"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2452.tgz#67a4b97c9a5b038f926411b95e8224afe57f6d2f"
+react-native-navigation@^2.0.2459:
+  version "2.0.2459"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2459.tgz#73e373ea6ee2948000dbbeb9f2a5b8d5f4ff7eeb"
   dependencies:
     hoist-non-react-statics "2.x.x"
     lodash "4.x.x"
