@@ -1,18 +1,18 @@
 /* eslint-disable */
-const os = require('os');
+const execCommand = require('./util/execCommand');
 
+const os = require('os');
 const platform = os.platform();
 
-const { exec } = require('child_process');
-
 if (platform.indexOf('win') !== -1) {
-  exec('rmdir /s /q node_modules',
-    (error, stdout, stderr) => {
-      console.log(`${stdout}`);
-      console.log(`${stderr}`);
-      if (error !== null) {
-        console.log(`exec error: ${error}`);
-      }
-    });
-    console.log('Done.')
+  execCommand('rmdir /s /q node_modules');
+  // not sure what other windows clean commands are
+} else {
+  execCommand('rm -rf node_modules');
+  execCommand('rm -rf $TMPDIR/react*');
+  execCommand('rm -rf $TMPDIR/metro-*');
+  execCommand('rm -rf ios/build');
+  execCommand('rm -rf android/build');
+  execCommand('watchman watch-del-all');
+  execCommand('yarn cache clean');
 }
