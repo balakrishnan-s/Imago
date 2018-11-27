@@ -4,15 +4,6 @@ import store from './src/store/store';
 import { registerScreens } from './src/screens/screens';
 import { setInitialLayout } from './src/NavigationController';
 
-/**
- * Wait till RNN is ready to listen and resolve
- * @returns {Promise} - Promise that resolves when RNN is ready to listen
- */
-const registerNavigationListener = () => new Promise((resolve) => {
-  Navigation.events().registerAppLaunchedListener(() => {
-    resolve();
-  });
-});
 
 /**
  * Wait till our store is persisted
@@ -28,7 +19,6 @@ const persistStore = storeToPersist => new Promise((resolve) => {
 /**
  * We register screens
  *  then we wait for
- *    - Navigation to be ready
  *    - Store to be rehydrated
  *    - Icons to be loaded.
  * and then we finally initialize
@@ -38,12 +28,19 @@ async function bootstrap() {
   registerScreens(store);
 
   // TODO: wait for Vector Icons
-  await Promise.all([registerNavigationListener(), persistStore(store)]);
+  await Promise.all([persistStore(store)]);
 
   setInitialLayout();
 }
 
 /**
- * INIT function of our app
+ * The initial listener of our app,
+ * this will get triggered on app start or when
+ * the Android activity is recreated.
+ * (For example by pressing back button on the
+ * root screen)
  */
-bootstrap();
+Navigation.events().registerAppLaunchedListener(() => {
+  bootstrap();
+});
+
