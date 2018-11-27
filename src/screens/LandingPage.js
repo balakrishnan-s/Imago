@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
-import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchEvents } from '../actions/actions';
+import commonStyles from '../styles/common';
+import EventsList from '../components/EventsList';
 
 class LandingPage extends Component {
 
@@ -16,18 +18,14 @@ class LandingPage extends Component {
     this.props.fetchEvents('Amsterdam');
   }
 
-  buildListFromEvents(events) {
-    return events.map(eventEntity => (
-      <Text>{eventEntity.title}</Text>
-    ));
-  }
-
   render() {
     const { events } = this.props;
     return (
-      <View style={{ flex: 1 }}>
-        {this.buildListFromEvents(events)}
-      </View>
+      <SafeAreaView style={commonStyles.flexContainer}>
+        <EventsList
+          data={events}
+        />
+      </SafeAreaView>
     );
   }
 
