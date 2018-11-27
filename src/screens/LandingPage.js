@@ -3,6 +3,7 @@ import { Navigation } from 'react-native-navigation';
 import { SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchEvents } from '../actions/actions';
+import { getEvents } from '../selectors/eventSelectors';
 import commonStyles from '../styles/common';
 import EventsList from '../components/EventsList';
 
@@ -32,7 +33,7 @@ class LandingPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: state.events.events,
+  events: getEvents(state),
 });
 
 const mapDispatchToProps = dispatch => ({
