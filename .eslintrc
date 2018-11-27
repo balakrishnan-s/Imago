@@ -29,6 +29,7 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "padded-blocks": ["error", { "classes": "always" ,"blocks": "never", "switches": "always" }],
         "object-curly-newline": ["error", { "consistent": true }],
-        "no-use-before-define": 0
+        "no-use-before-define": 0,
+        "import/prefer-default-export": 0
     } 
   }
