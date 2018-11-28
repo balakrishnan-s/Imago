@@ -1,5 +1,7 @@
 package com.eventfinder;
 
+import com.oblador.vectoricons.VectorIconsPackage;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactNativeHost;
 import com.reactnativenavigation.NavigationApplication;
@@ -17,7 +19,7 @@ public class MainApplication extends NavigationApplication {
     @Override
     public List<ReactPackage> createAdditionalReactPackages() {
         return Arrays.<ReactPackage>asList(
-            // eg. new VectorIconsPackage()
+            new VectorIconsPackage()
         );
     }
     @Override
