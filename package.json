@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",
+    "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.56.0",
     "react-native-navigation": "^2.1.3",
