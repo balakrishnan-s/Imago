@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const Card = ({ item }) => (
   <View style={styles.cardContainer}>
@@ -13,6 +14,10 @@ const Card = ({ item }) => (
     />
   </View>
 );
+
+Card.propTypes = {
+  item: PropTypes.instanceOf(Object).isRequired,
+};
 
 const styles = StyleSheet.create({
   cardContainer: {

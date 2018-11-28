@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Card from './Card';
 
 class EventsList extends Component {
+
+  static propTypes = {
+    data: PropTypes.instanceOf(Array).isRequired,
+  }
 
   constructor(props) {
     super(props);
@@ -19,9 +24,10 @@ class EventsList extends Component {
   )
 
   render() {
+    const { data } = this.props;
     return (
       <FlatList
-        data={this.props.data}
+        data={data}
         extraData={this.state}
         // onEndReachedThreshold
         // onRefresh

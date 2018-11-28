@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
 import { SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../actions/actions';
+import PropTypes from 'prop-types';
+import { fetchEvents as fetchEventsAction } from '../actions/actions';
 import { getEvents } from '../selectors/eventSelectors';
 import commonStyles from '../styles/common';
 import EventsList from '../components/EventsList';
 
 class LandingPage extends Component {
+
+  static propTypes = {
+    fetchEvents: PropTypes.func.isRequired,
+    events: PropTypes.instanceOf(Array).isRequired,
+  }
 
   constructor(props) {
     super(props);
@@ -16,7 +22,8 @@ class LandingPage extends Component {
   }
 
   componentDidAppear() {
-    this.props.fetchEvents('Amsterdam');
+    const { fetchEvents } = this.props;
+    fetchEvents('Amsterdam');
   }
 
   render() {
@@ -38,7 +45,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchEvents: (location) => {
-    dispatch(fetchEvents(location));
+    dispatch(fetchEventsAction(location));
   },
 });
 
