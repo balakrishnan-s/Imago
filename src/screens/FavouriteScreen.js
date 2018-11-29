@@ -8,7 +8,7 @@ import { getEvents } from '../selectors/eventSelectors';
 import commonStyles from '../styles/common';
 import EventsList from '../components/EventsList';
 
-class LandingPage extends Component {
+class FavouriteScreen extends Component {
 
   static propTypes = {
     fetchEvents: PropTypes.func.isRequired,
@@ -49,4 +49,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
+export default connect(mapStateToProps, mapDispatchToProps)(FavouriteScreen);

@@ -1,1 +1,1 @@
-export const getEvents = state => state.events;
+export const getEvents = state => state.events.events;
