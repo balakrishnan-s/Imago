@@ -1,6 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import { persistStore as persistStoreRaw } from 'redux-persist';
 import store from './src/store/store';
+import { loadIcons } from './src/lib/AppIcons';
 import { registerScreens } from './src/screens/screens';
 import { setInitialLayout } from './src/NavigationController';
 
@@ -27,8 +28,7 @@ const persistStore = storeToPersist => new Promise((resolve) => {
 async function bootstrap() {
   registerScreens(store);
 
-  // TODO: wait for Vector Icons
-  await Promise.all([persistStore(store)]);
+  await Promise.all([loadIcons(), persistStore(store)]);
 
   setInitialLayout();
 }
