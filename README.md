@@ -1,2 +1,2 @@
-# EventFinder
+# Imago
 &lt;>&lt;

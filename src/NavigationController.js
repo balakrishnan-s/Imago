@@ -33,7 +33,7 @@ export const setInitialLayout = () => {
       children: [
         {
           component: {
-            name: 'eventFinder.FavouriteScreen',
+            name: 'imago.FavouriteScreen',
           },
         },
       ],
@@ -51,7 +51,7 @@ export const setInitialLayout = () => {
       children: [
         {
           component: {
-            name: 'eventFinder.MapScreen',
+            name: 'imago.MapScreen',
           },
         },
       ],

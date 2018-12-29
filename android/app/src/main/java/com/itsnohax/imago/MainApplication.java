@@ -1,4 +1,4 @@
-package com.eventfinder;
+package com.itsnohax.imago;
 
 import com.oblador.vectoricons.VectorIconsPackage;
 

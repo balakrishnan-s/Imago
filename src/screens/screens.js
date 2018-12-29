@@ -5,6 +5,6 @@ import MapScreen from './MapScreen';
 
 /* eslint-disable import/prefer-default-export */
 export function registerScreens(store) {
-  Navigation.registerComponentWithRedux('eventFinder.FavouriteScreen', () => FavouriteScreen, Provider, store);
-  Navigation.registerComponentWithRedux('eventFinder.MapScreen', () => MapScreen, Provider, store);
+  Navigation.registerComponentWithRedux('imago.FavouriteScreen', () => FavouriteScreen, Provider, store);
+  Navigation.registerComponentWithRedux('imago.MapScreen', () => MapScreen, Provider, store);
 }

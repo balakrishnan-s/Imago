@@ -98,7 +98,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.eventfinder"
+        applicationId "com.itsnohax.imago"
         minSdkVersion 19
         targetSdkVersion 25
         missingDimensionStrategy "RNN.reactNativeVersion", "reactNative56"
